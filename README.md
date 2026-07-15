@@ -32,7 +32,9 @@ Designed as a star schema, with `fact_deliveries` (grain: one row per ball bowle
 ## Tech Stack
 
 - Python (pandas) — data cleaning and transformation
+- SQLite — lightweight local database
 - SQL — analysis queries
+- Power BI — interactive dashboard
 - Git/GitHub — version control
 
 ## Sample Analysis
@@ -74,6 +76,26 @@ Season-wise analysis shows a clear jump in 2022 when IPL expanded from 8 to 10 t
 (Gujarat Titans and Lucknow Super Giants joined), increasing matches from ~60 to ~74 per
 season and total runs from ~19,000 to ~25,000 per season.
 
+## Dashboard
+
+Interactive Power BI dashboard built on top of the SQLite database, visualizing key IPL statistics across all seasons (2008–2024).
+
+![IPL Dashboard](Diagrams/Dashboard.png)
+
+**Visuals included:**
+- Top 10 run scorers of all time
+- Top 10 wicket takers of all time
+- Total runs by season (2008–2024)
+- Summary cards: Total Runs, Total Balls, Total Matches
+
+## How to Run
+
+1. Clone the repo
+2. Install dependencies: `pip install pandas`
+3. Run the pipeline: `python pipeline.py`
+4. Database `ipl_pipeline.db` is created automatically
+5. Open `ipl_dashboard.pbix` in Power BI Desktop to explore the dashboard
+
 ## Project Status
 
-✅ Complete — pipeline runs end to end: raw CSVs → cleaned data → star schema → SQLite database → SQL analysis.
+✅ Complete — raw CSVs → cleaned data → star schema → SQLite → SQL analysis → Power BI dashboard
