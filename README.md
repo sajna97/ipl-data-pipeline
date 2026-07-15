@@ -35,6 +35,45 @@ Designed as a star schema, with `fact_deliveries` (grain: one row per ball bowle
 - SQL — analysis queries
 - Git/GitHub — version control
 
+## Sample Analysis
+
+All queries run against the SQLite database using `pd.read_sql()`.
+
+**Top 5 Teams by Total Wins (2008–2024)**
+
+| Team | Wins |
+|---|---|
+| Mumbai Indians | 144 |
+| Chennai Super Kings | 138 |
+| Kolkata Knight Riders | 131 |
+| Royal Challengers Bengaluru | 123 |
+| Sunrisers Hyderabad | 117 |
+
+**Top 5 Run Scorers of All Time**
+
+| Player | Total Runs |
+|---|---|
+| V Kohli | 8,014 |
+| S Dhawan | 6,769 |
+| RG Sharma | 6,630 |
+| DA Warner | 6,567 |
+| SK Raina | 5,536 |
+
+**Top 5 Wicket Takers of All Time**
+
+| Player | Total Wickets |
+|---|---|
+| YS Chahal | 213 |
+| DJ Bravo | 207 |
+| PP Chawla | 201 |
+| SP Narine | 200 |
+| R Ashwin | 198 |
+
+**Key Insight — IPL Expansion Effect**
+Season-wise analysis shows a clear jump in 2022 when IPL expanded from 8 to 10 teams
+(Gujarat Titans and Lucknow Super Giants joined), increasing matches from ~60 to ~74 per
+season and total runs from ~19,000 to ~25,000 per season.
+
 ## Project Status
 
-🚧 In progress — cleaning and modeling complete, loading and analysis phases next.
+✅ Complete — pipeline runs end to end: raw CSVs → cleaned data → star schema → SQLite database → SQL analysis.
